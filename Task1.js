@@ -1,10 +1,8 @@
 var express = require("express");
 var app = express();
-var server = app.listen(process.env.PORT || 8081, () => {
-  console.log('Server is started on 127.0.0.1:'+ (process.env.PORT || 8081))
-})
+const port = process.env.PORT || 3001;
 app.get("/", function(req, res) {
   res.send("Hello World!");
 });
 
-app.listen(server);
+app.listen(port);

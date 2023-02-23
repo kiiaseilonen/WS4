@@ -1,9 +1,7 @@
 // Otetaan express-moduuli käyttöön
 var express = require("express");
 var app = express();
-var server = app.listen(process.env.PORT || 8081, () => {
-    console.log('Server is started on 127.0.0.1:'+ (process.env.PORT || 8081))
-  })
+const port = process.env.PORT || 3001;
 // Luodaan reitit ja niiden toiminnallisuudet
 app.get("/", function(req, res) {
   res.send("Hello World!");
@@ -18,5 +16,5 @@ app.get("*", function(req, res) {
   res.send("Cant find the requested page", 404);
 });
 
-app.listen(server);
+app.listen(port);
 
